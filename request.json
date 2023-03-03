@@ -1,0 +1,23 @@
+{
+    "service": "Mast.Jwst.Filtered.NIRCam",
+    "params": {
+      "columns": "filename,program,fileSize,publicReleaseDate",
+      "filters": [
+        {
+          "paramName": "program",
+          "values": [
+          ],
+          "freeText": "2%%%"
+        },
+          {
+          "paramName": "productLevel",
+          "values": [
+            "3"
+          ]
+        }
+      ]
+    },
+    "format": "json",
+    "removenullcolumns": false,
+    "timeout": 30
+  }
