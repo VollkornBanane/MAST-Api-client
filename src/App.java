@@ -145,10 +145,14 @@ public class App {
                     break;
 
                 case "date":
-                    String dateFormat = filterInfo.get("formatting").asText();
-                    SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
-                    long timestamp = Long.parseLong(data[i]);
-                    data[i] = formatter.format(new Date(timestamp));
+                    try {
+                        String dateFormat = filterInfo.get("formatting").asText();
+                        SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
+                        long timestamp = Long.parseLong(data[i]);
+                        data[i] = formatter.format(new Date(timestamp));
+                    } catch (Exception e) {
+                        System.err.println("couldn't format field as date!");
+                    }
                     break;
 
                 case "fileSize":
